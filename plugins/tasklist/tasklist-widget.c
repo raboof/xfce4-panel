@@ -591,6 +591,8 @@ xfce_tasklist_init (XfceTasklist *tasklist)
   g_signal_connect (G_OBJECT (tasklist->arrow_button), "toggled",
       G_CALLBACK (xfce_tasklist_arrow_button_toggled), tasklist);
   gtk_widget_show (tasklist->arrow_button);
+
+  wnck_set_client_type(WNCK_CLIENT_TYPE_PAGER);
 }
 
 
