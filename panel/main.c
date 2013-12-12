@@ -40,6 +40,7 @@
 #include <dbus/dbus-glib.h>
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4ui/libxfce4ui.h>
+#include <libwnck/libwnck.h>
 
 #include <common/panel-private.h>
 #include <common/panel-debug.h>
@@ -224,6 +225,9 @@ main (gint argc, gchar **argv)
 
   /* set translation domain */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+
+  /* set EWMH source indication */
+  wnck_set_client_type(WNCK_CLIENT_TYPE_PAGER);
 
 #ifdef G_ENABLE_DEBUG
   /* do NOT remove this line for now, If something doesn't work,
